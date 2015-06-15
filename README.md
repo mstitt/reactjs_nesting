@@ -37,4 +37,4 @@ generate the list with different tagging approaches: [JSX Source:
 www/js/bundle_040.jsx](www/js/bundle_040.jsx).
 
 What will this all look like as CoffeeScript?  [JSX Source:
- www/js/bundle_050.jsx](www/js/bundle_050.jsx).
+ www/js/bundle_050.cjsx](www/js/bundle_050.cjsx).
