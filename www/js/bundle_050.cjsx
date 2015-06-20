@@ -11,7 +11,7 @@ MyList = React.createClass
     <div className="myList">
     {
       React.Children.map @props.children, (child) =>
-        React.addons.cloneWithProps child, title: @props.data.title, recs: @props.data.recs
+        React.cloneElement child, title: @props.data.title, recs: @props.data.recs
     }
     </div>
 
@@ -27,7 +27,7 @@ ListTitle = React.createClass
 recsIterator = (self) ->
   self.props.recs.map (rec) ->
     React.Children.map self.props.children, (child) ->
-      React.addons.cloneWithProps child, key: rec.key, rec: rec
+      React.cloneElement child, key: rec.key, rec: rec
 
 #------------------------------------------------------------
 ListUlRows = React.createClass

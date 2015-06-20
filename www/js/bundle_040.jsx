@@ -13,9 +13,9 @@ var MyList = React.createClass({
             <div className="myList">
                 {
                     React.Children.map(self.props.children, function(child) {
-                        return React.addons.cloneWithProps(
-                            child,
-                            { title: self.props.data.title, recs: self.props.data.recs }
+                        return React.cloneElement(
+                          child,
+                          { title: self.props.data.title, recs: self.props.data.recs }
                         )
                     })
                 }
@@ -43,9 +43,9 @@ var recsIterator = function(self) {
                 React.Children.map(
                     self.props.children,
                     function(child) {
-                        return React.addons.cloneWithProps(
-                            child,
-                            { key: rec.key, rec: rec }
+                        return React.cloneElement(
+                          child,
+                          { key: rec.key, rec: rec }
                         )
                     }
                 )

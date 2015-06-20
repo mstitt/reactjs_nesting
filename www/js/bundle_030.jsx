@@ -13,9 +13,9 @@ var MyList = React.createClass({
             <div className="myList">
                 {
                     React.Children.map(self.props.children, function(child) {
-                        return React.addons.cloneWithProps(
-                            child,
-                            { title: self.props.data.title, recs: self.props.data.recs }
+                        return React.cloneElement(
+                          child,
+                          { title: self.props.data.title, recs: self.props.data.recs }
                         )
                     })
                 }
@@ -47,10 +47,10 @@ var ListRows = React.createClass({
                                 React.Children.map(
                                     self.props.children,
                                     function(child) {
-                                        return React.addons.cloneWithProps(
-                                            child,
-                                            { key: rec.key, rec: rec }
-                                        ); 
+                                        return React.cloneElement(
+                                          child,
+                                          { key: rec.key, rec: rec }
+                                        )
                                     }
                                 )
                             );
@@ -63,9 +63,6 @@ var ListRows = React.createClass({
 
 //------------------------------------------------------------
 var ListRow = React.createClass({
-    propTypes: {
-        rec: React.PropTypes.object.isRequired
-    },
     render: function() {
         return (
             <div className="myListRow">row: {this.props.rec.label}</div>

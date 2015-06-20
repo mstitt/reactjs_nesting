@@ -14,7 +14,7 @@
         "className": "myList"
       }, React.Children.map(this.props.children, (function(_this) {
         return function(child) {
-          return React.addons.cloneWithProps(child, {
+          return React.cloneElement(child, {
             title: _this.props.data.title,
             recs: _this.props.data.recs
           });
@@ -42,7 +42,7 @@
   recsIterator = function(self) {
     return self.props.recs.map(function(rec) {
       return React.Children.map(self.props.children, function(child) {
-        return React.addons.cloneWithProps(child, {
+        return React.cloneElement(child, {
           key: rec.key,
           rec: rec
         });
